@@ -9,15 +9,10 @@ port_mul = 3003;
 port_div = 3004;
 
 app.get('/add/:num1/:num2', async (req, res) => {
-  const num1 = req.params.num1;
-  const num2 = req.params.num2;
-
-  try {
-    const result = await axios.get(`http://localhost:3001/addition/${num1}/${num2}`);
-    res.send(result.data);
-  } catch (error) {
-    res.send({ error: error.message });
-  }
+    const num1 = req.params.num1;
+    const num2 = req.params.num2;
+  
+    await makeHTTPRequestToService(port_add, "", num1, num2, res);
 });
 
 app.get('/sub/:num1/:num2', async (req, res) => {
