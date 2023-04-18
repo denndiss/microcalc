@@ -1,6 +1,8 @@
 const express = require('express');
 const app = express();
 
+let port = 3001;
+
 app.get('/:num1/:num2', (req, res) => {
   const num1 = parseInt(req.params.num1);
   const num2 = parseInt(req.params.num2);
@@ -8,6 +10,6 @@ app.get('/:num1/:num2', (req, res) => {
   res.send({ result });
 });
 
-app.listen(3001, () => {
-  console.log('Addition service started on port 3001');
+app.listen(port, () => {
+  console.log(`Addition service started on port ${port}`);
 });
