@@ -11,11 +11,11 @@
     "multiply": "cd multiply && npm start",
     "sub": "cd sub && npm start",
     
-    "start": "concurrently \"npm run add\" \"npm run apigateway\" \"npm run divide\" \"npm run multiply\" \"npm run sub\""
+    "start": "npm install && npm update && concurrently \"npm run add\" \"npm run apigateway\" \"npm run divide\" \"npm run multiply\" \"npm run sub\""
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "concurrently": "^8.0.1"
+    "concurrently": "8.0.*"
   }
 }
